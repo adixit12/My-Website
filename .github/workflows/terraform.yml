@@ -3,8 +3,7 @@ name: Run test_redirects.py
 run-name: Execute test_redirects.py
 
 on:
-  schedule:
-    - cron: '0 * * * *' #Run every hour
+  pull_request
 
 jobs:
   build:
