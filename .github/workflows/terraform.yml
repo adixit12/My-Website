@@ -1,0 +1,21 @@
+#### Workflow Start ####
+name: 'Terraform'
+run-name: For PR #${{github.event.number}} of ${{github.ref_name}} branch.
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  Echo:
+    name: 'Validate_and_Draft_Version'
+    runs-on: ubuntu-latest
+
+    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
+    steps:
+      - name: echo notes
+        run: echo "github.event.number, For more details refer https://github.com/woolworthslimited/wow-akm-cartology-nonprod/actions/runs/github.run_id"
