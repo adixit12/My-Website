@@ -1,6 +1,6 @@
 #### Workflow Start ####
 name: 'Terraform'
-run-name: For PR ${{github.event.number}} - ${{github.head_ref}} - ${{github.ref}}
+run-name: For PR ${{github.event.number}} - ${{github.event_name}}
 
 on:
   push:
