@@ -1,5 +1,6 @@
 import requests
 import json
+import os
 from akamai.edgegrid import EdgeGridAuth, EdgeRc
 #from urllib.parse import urljoin
 
@@ -9,9 +10,9 @@ baseurl = 'https://akab-xe3dt34aoi3hcmul-y3mjulo6d64sk6tb.luna.akamaiapis.net'
 
 s = requests.Session()
 s.auth = EdgeGridAuth(
-    client_token=${{secrets.client_token}},
-    client_secret=${{secrets.client_secret}},
-    access_token=${{secrets.access_token}}
+    client_token=os.environ['client_token'],
+    client_secret=os.environ['client_secret'],
+    access_token=os.environ['access_token']
 )
 
 # ---------------------------
