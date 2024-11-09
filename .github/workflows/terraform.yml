@@ -1,21 +1,21 @@
 #### Workflow Start ####
-name: 'Terraform'
-run-name: Triggered by ${{github.event_name}}
+name: Run test_redirects.py
+run-name: Execute test_redirects.py
 
 on:
-  push:
-    branches:
-    - main
-  pull_request:
-  pull_request_review:
-    types: [submitted]
+  pull_request
 
 jobs:
-  Echo:
-    name: 'Validate_and_Draft_Version'
+  build:
     runs-on: ubuntu-latest
-
-    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     steps:
-      - name: echo notes
-        run: echo "Changes made as part of PR ${{github.event.number}}, For more details refer https://github.com/woolworthslimited/wow-akm-cartology-nonprod/actions/runs/${{github.run_id}}"
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content
+
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10' # install the python version needed
+
+      - name: execute py script # run main.py
+        run: python test_redirects.py
