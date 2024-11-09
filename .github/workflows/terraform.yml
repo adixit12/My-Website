@@ -1,11 +1,11 @@
 #### Workflow Start ####
 name: 'Terraform'
-run-name: For PR ${{github.event.number}} - ${{github.head_ref}} - ${{github.ref}}
+run-name: For PR ${{github.event.number}} - ${{github.event_name}}
 
 on:
   push:
     branches:
-    - main
+    - Add-GitHub-Actions
   pull_request:
   pull_request_review:
     types: [submitted]
