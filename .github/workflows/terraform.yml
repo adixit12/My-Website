@@ -1,6 +1,6 @@
 #### Workflow Start ####
 name: 'Terraform'
-run-name: For PR #${{github.event.number}} of ${{github.ref_name}} branch.
+run-name: For PR \#${{github.event.number}} of ${{github.ref_name}} branch.
 
 on:
   push:
@@ -18,4 +18,4 @@ jobs:
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     steps:
       - name: echo notes
-        run: echo "github.event.number, For more details refer https://github.com/woolworthslimited/wow-akm-cartology-nonprod/actions/runs/github.run_id"
+        run: echo "${{github.event.number}}, For more details refer https://github.com/woolworthslimited/wow-akm-cartology-nonprod/actions/runs/${{github.run_id}}"
