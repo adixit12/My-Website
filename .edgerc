@@ -1,4 +1,0 @@
-[default]
-client_secret = os.environ['client_secret']
-access_token = os.environ['access_token']
-client_token = os.environ['client_token']
