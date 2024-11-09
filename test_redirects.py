@@ -5,10 +5,14 @@ from akamai.edgegrid import EdgeGridAuth, EdgeRc
 
 edgerc = EdgeRc('.edgerc')
 section = 'default'
-baseurl = 'https://%s' % edgerc.get(section, 'host')
+baseurl = 'https://akab-xe3dt34aoi3hcmul-y3mjulo6d64sk6tb.luna.akamaiapis.net'
 
 s = requests.Session()
-s.auth = EdgeGridAuth.from_edgerc(edgerc, section)
+s.auth = EdgeGridAuth(
+    client_token=${{secrets.client_token}},
+    client_secret=${{secrets.client_secret}},
+    access_token=${{secrets.access_token}}
+)
 
 # ---------------------------
 
