@@ -3,7 +3,7 @@ import json
 from akamai.edgegrid import EdgeGridAuth, EdgeRc
 #from urllib.parse import urljoin
 
-edgerc = EdgeRc('../.edgerc')
+edgerc = EdgeRc('.edgerc')
 section = 'default'
 baseurl = 'https://%s' % edgerc.get(section, 'host')
 
