@@ -1,5 +1,4 @@
 [default]
-client_secret = ${{secrets.client_secret}}
-host = ${{secrets.host}}
-access_token = ${{secrets.access_token}}
-client_token = ${{secrets.client_token}}
+client_secret = os.environ['client_secret']
+access_token = os.environ['access_token']
+client_token = os.environ['client_token']
