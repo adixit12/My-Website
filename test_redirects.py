@@ -14,12 +14,29 @@ s.auth = EdgeGridAuth(
 ) ## fetched from environment variables defined in the .github/workflows yml file. 
 
 # ---------------------------
-
 propertyId='prp_964439'
 
 latest_version_of_property_url = baseurl + '/papi/v1/properties/'+propertyId
 result = s.get(latest_version_of_property_url)
 
-latestVersion = result.json()['properties']['items'][0]['latestVersion']
+latestVersion = result.json()['properties']['items'][0]['productionVersion']
 
 print(latestVersion)
+# ----------------------------
+
+# contractId='ctr_C-1IK18KM'
+# behaviorToMatch = 'siteShield'
+
+# #Get the list of Groups
+# groups_under_a_contract_url = baseurl + '/papi/v1/groups'
+# result = s.get(groups_under_a_contract_url)
+# print(result)
+
+# items = result.json()['groups']['items']
+# groups = {}
+
+# for item in items:
+#     groups[item['groupId']] = [item['groupName']]
+
+# print(groups)
+# ----------------------------
